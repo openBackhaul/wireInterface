@@ -7,27 +7,27 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200 : 181009-MW-PHY-IM.zip
+- [0.1.0-poc5.181009.1200 : 181009-MW-PHY-IM.zip](./181009-MW-PHY-IM.zip)
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+overview.1 : 181009 WireInterfaceCD.PNG
+- [0.1.0-poc5.181009.1200+overview.1 : 181009 WireInterfaceCD.PNG](./181009%20WireInterfaceCD.PNG)
 
 ### List of Classes
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- txt to be provided
+- [0.1.0-poc5.181009.1200+list.1 : 0.1.0-poc5.181009.1200+list.1.txt](./0.1.0-poc5.181009.1200%2Blist.1.txt)
 
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+gendoc.1 : 181009 WireInterface PoC5.docx
+- [0.1.0-poc5.181009.1200+gendoc.1 : 181009 WireInterface PoC5.docx](./181009%20WireInterface%20PoC5.docx)
 
 ### YANG File
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+yang.1 : MW-ETH-PHY_10_Oct2018_19Hr40Mins.zip
+- [0.1.0-poc5.181009.1200+yang.1 : MW-ETH-PHY_10_Oct2018_19Hr40Mins.zip](./MW-ETH-PHY_10_Oct2018_19Hr40Mins.zip)
 
 ### Interface Simulator
 - Alex Stancu (Alex.Stancu@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+simulator.1 : 0.1.0-poc5.181009.1200+simulator.1.zip
+- [0.1.0-poc5.181009.1200+simulator.1 : 0.1.0-poc5.181009.1200+simulator.1.zip](./0.1.0-poc5.181009.1200%2Bsimulator.1.zip)
 
 ### Interface Validator
 - not planned
