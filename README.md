@@ -40,9 +40,9 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Open Issue List
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [bugtracker.openBackhaul.com](bugtracker.openBackhaul.com)
+- [bugtracker.openBackhaul.com](https://bugtracker.openBackhaul.com)
 
 ### Comments 
 The first implementations of the wireInterface have been made within framework of the 5th ONF PoC during November 2018.
 
-Consolidated UML and YANG models contain ONF Core IM 1.2, airInterface, wireInterface, pureEthernetStructure and ethernetContainer as they have been applied during the 5th ONF PoC.
+Consolidated UML and YANG models contain ONF Core IM 1.2, airInterface, wireInterface, hybridMwStructure, pureEthernetStructure, tdmContainer and ethernetContainer as they have been applied during the 5th ONF PoC.
