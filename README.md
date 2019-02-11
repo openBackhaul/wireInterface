@@ -11,7 +11,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.20161215.1546+overview.1 : [190131 WireInterfaceCD.PNG](./190131%20WireInterfaceCD.PNG)
+- 1.0.0-tr541v1.190131.1701+overview.1 : [190131 WireInterfaceCD.PNG](./190131%20WireInterfaceCD.PNG)
 
 ### List of Classes
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
