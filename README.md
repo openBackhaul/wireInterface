@@ -7,11 +7,11 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.190131.1701 : [190131_Ethernet_PHY_TR-541_v0.0.zip](./190131_Ethernet_PHY_TR-541_v0.0.zip)
+- 1.0.0-tr541v1.190216.1730 : 
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.190131.1701+overview.1 : [190131 WireInterfaceCD.PNG](./190131%20WireInterfaceCD.PNG)
+- 1.0.0-tr541v1.190216.1730+overview.1 : 
 
 ### List of Classes
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
