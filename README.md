@@ -35,7 +35,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Publication
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1_0.190217.1034+tr.1 : [Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.1](./Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.1.docx)
+- 1.0.0-tr541v1_0.190217.1034+tr.1 : [Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.2](./Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.2.docx)
 
 ### Model Classification
 - to be published
