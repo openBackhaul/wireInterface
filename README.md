@@ -3,15 +3,15 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Branch
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.d.t : Model to be officially published in ONF
+- 1.0.0-tr541v1_0.d.t : Model to be officially published in ONF
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.190216.1730 : 
+- 1.0.0-tr541v1_0.190217.1034 : [Ethernet_PHY_1.0.0-tr541v1_0.190217.1034.zip](./Ethernet_PHY_1.0.0-tr541v1_0.190217.1034.zip)
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 1.0.0-tr541v1.190216.1730+overview.1 : 
+- 1.0.0-tr541v1_0.190217.1034+overview.1 : [190217_wireInterfaceCD.png](./190217_wireInterfaceCD.png)
 
 ### List of Classes
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
@@ -35,10 +35,10 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Publication
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- to be provided
+- 1.0.0-tr541v1_0.190217.1034+tr.1 : [Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.1](./Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.1.docx)
 
 ### Model Classification
-- Published
+- to be published
 
 ### Open Issue List
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
