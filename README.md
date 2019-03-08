@@ -22,6 +22,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - 1.0.0-tr541v1_0.190307.0850+gendoc.1 : [Tr541v1.0_1.0.0-tr541v1_0.190307.0850+tr.3](./Tr541v1.0_1.0.0-tr541v1_0.190307.0850+tr.3.docx)
+- 1.0.0-tr541v1_0.190307.0850+gendoc.2 : [Tr541v1.0_1.0.0-tr541v1_0.190308.1850+tr.4](./Tr541v1.0_1.0.0-tr541v1_0.190308.1850+tr.4.docx)
 
 ### YANG File
 - Kranti Appari (Kranti.Appari@openBackhaul.com)
@@ -39,6 +40,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - 1.0.0-tr541v1_0.190217.1034+tr.1 : [Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.2](./Tr541v1.0_1.0.0-tr541v1_0.190217.1034+tr.2.docx)
 - 1.0.0-tr541v1_0.190307.0850+tr.1 : [Tr541v1.0_1.0.0-tr541v1_0.190307.0850+tr.3](./Tr541v1.0_1.0.0-tr541v1_0.190307.0850+tr.3.docx)
+- 1.0.0-tr541v1_0.190307.0850+tr.2 : [Tr541v1.0_1.0.0-tr541v1_0.190308.1850+tr.4](./Tr541v1.0_1.0.0-tr541v1_0.190308.1850+tr.4.docx)
 
 ### Model Classification
 - to be published
