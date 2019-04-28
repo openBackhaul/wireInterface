@@ -17,10 +17,10 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - 0.1.0-poc5.181009.1200+gendoc.1 : [181009 WireInterface PoC5.docx](./181009%20WireInterface%20PoC5.docx)
 
 ### YANG File
-- 0.1.0-poc5.181009.1200+yang.1 : [MW-ETH-PHY_10_Oct2018_19Hr40Mins.zip](./MW-ETH-PHY_10_Oct2018_19Hr40Mins.zip)
+- 
 
 ### Interface Simulator
-- 0.1.0-poc5.181009.1200+simulator.1 : [0.1.0-poc5.181009.1200+simulator.1.zip](./0.1.0-poc5.181009.1200%2Bsimulator.1.zip)
+- 
 
 ### Interface Validator
 - not provided
@@ -29,12 +29,9 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - not provided
 
 ### Model Classification
-- PoC
+- Trial
 
 ### Open Issue List
 - [bugtracker.openBackhaul.com](https://bugtracker.openBackhaul.com)
 
 ### Comments 
-The first implementations of the wireInterface have been made within framework of the 5th ONF PoC during November 2018.
-Attached UML and YANG covers Microwave and Ethernet PHY.
-Consolidated UML and YANG models contain ONF Core IM 1.2, airInterface, wireInterface, hybridMwStructure, pureEthernetStructure, tdmContainer and ethernetContainer as they have been applied during the 5th ONF PoC.
