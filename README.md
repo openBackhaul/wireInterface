@@ -13,9 +13,5 @@ Technology specific amendment to the LayerProtocol class for the physical layer 
 - Component of TR-541 that has been updated by Deutsche Telekom, Ericsson, Ceragon, Nokia, SIAE and Telefonica
 - under definition
 
-### Open Issue List
-- [bugtracker.openBackhaul.com](https://bugtracker.openBackhaul.com)
-
 ### Comments
 ./.
-
