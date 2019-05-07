@@ -14,7 +14,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - 0.1.0-poc5.181009.1200+overview.1 : [181009 WireInterfaceCD.PNG](./181009%20WireInterfaceCD.PNG)
 
 ### List of Classes
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
+- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - 0.1.0-poc5.181009.1200+list.1 : [0.1.0-poc5.181009.1200+list.1.txt](./0.1.0-poc5.181009.1200%2Blist.1.txt)
 
 ### GenDoc Export
