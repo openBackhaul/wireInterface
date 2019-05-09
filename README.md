@@ -7,19 +7,19 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200 : [181009-MW-PHY-IM.zip](./181009-MW-PHY-IM.zip)
+- [WireInterface_2.0.0-tsp.190509.1945](./WireInterface_2.0.0-tsp.190509.1945.zip)
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+overview.1 : [181009 WireInterfaceCD.PNG](./181009%20WireInterfaceCD.PNG)
+- [WireInterface_2.0.0-tsp.190509.1945+overview.1](./WireInterface_2.0.0-tsp.190509.1945+overview.1.png)
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+list.1 : [0.1.0-poc5.181009.1200+list.1.txt](./0.1.0-poc5.181009.1200%2Blist.1.txt)
+- 
 
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.181009.1200+gendoc.1 : [181009 WireInterface PoC5.docx](./181009%20WireInterface%20PoC5.docx)
+- [WireInterface_2.0.0-tsp.190509.1945+gendoc.1.docx](./WireInterface_2.0.0-tsp.190509.1945+gendoc.1.docx)
 
 ### YANG File
 - to be provided
