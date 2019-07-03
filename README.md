@@ -21,6 +21,13 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [WireInterface_2.0.0-tsp.190509.1945+gendoc.1.docx](./WireInterface_2.0.0-tsp.190509.1945+gendoc.1.docx)
 
+### Augmentation Condition
+- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==WIRE_INTERFACE
+
+### YANG Header
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
+- to be provided
+
 ### YANG File
 - to be provided
 
