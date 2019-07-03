@@ -3,7 +3,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### Branch
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-poc5.d.t : Model, which has been tested during 5th ONF PoC in November 2018
+- 2.0.0-tsp.d.t : Model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
