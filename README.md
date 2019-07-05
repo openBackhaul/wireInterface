@@ -22,7 +22,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - [WireInterface_2.0.0-tsp.190703.1410+gendoc.1](./WireInterface_2.0.0-tsp.190703.1410+gendoc.1.docx)
 
 ### Augmentation Condition
-- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==WIRE_INTERFACE
+- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_WIRE_LAYER
 
 ### YANG File
 - [WireInterface_2.0.0-tsp.190703.1410+yang.1](./WireInterface_2.0.0-tsp.190703.1410+yang.1.zip)
