@@ -25,7 +25,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER
 
 ### YANG File
-- Martin Skorupski (Martin.Skorupski@openBackhaul.com)
+- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - [WireInterface_2.0.0-tsp.190711.1215+yang.1](./WireInterface_2.0.0-tsp.190711.1215+yang.1.zip)
 
 ### Interface Simulator
