@@ -26,7 +26,7 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 
 ### YANG File
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [WireInterface_2.0.0-tsp.190711.1215+yang.1](./WireInterface_2.0.0-tsp.190711.1215+yang.1.zip)
+- [WireInterface_2.0.0-tsp.190711.1215+yang.2](./WireInterface_2.0.0-tsp.190711.1215+yang.2.zip)
 
 ### Interface Simulator
 - to be provided
