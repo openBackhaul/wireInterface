@@ -28,6 +28,8 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
 - [WireInterface_2.0.0-tsp.191030.1420+yang.3](./WireInterface_2.0.0-tsp.191030.1420+yang.3.zip)
   (Couple of explanatory-only elements deleted from the YANG)
+- [WireInterface_2.0.0-tsp.191030.1420+yang.4](./WireInterface_2.0.0-tsp.191030.1420+yang.4.zip)
+  (Covering all open issues except the core-model-name issue)
 
 ### Interface Simulator
 - to be provided
