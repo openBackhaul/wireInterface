@@ -32,6 +32,8 @@ Technology specific interface definition for Ethernet PHY interfaces according t
   (Covering all open issues except the core-model-name issue)
 - [WireInterface_2.0.0-tsp.191030.1420+yang.5](./WireInterface_2.0.0-tsp.191030.1420+yang.5.zip)
   (Including the must statement for leafref)
+- [WireInterface_2.0.0-tsp.191030.1420+yang.6](./WireInterface_2.0.0-tsp.191030.1420+yang.6.zip)
+  (!!!Experimental file for analyzing the core-model-name issue!!!)
 
 ### Interface Simulator
 - to be provided
