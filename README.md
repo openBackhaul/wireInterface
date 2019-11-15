@@ -25,18 +25,8 @@ Technology specific interface definition for Ethernet PHY interfaces according t
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER
 
 ### YANG File
-- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [WireInterface_2.0.0-tsp.191030.1420+yang.3](./WireInterface_2.0.0-tsp.191030.1420+yang.3.zip)
-  (Couple of explanatory-only elements deleted from the YANG)
-- [WireInterface_2.0.0-tsp.191030.1420+yang.4](./WireInterface_2.0.0-tsp.191030.1420+yang.4.zip)
-  (Covering all open issues except the core-model-name issue)
-- [WireInterface_2.0.0-tsp.191030.1420+yang.5](./WireInterface_2.0.0-tsp.191030.1420+yang.5.zip)
-  (Including the must statement for leafref)
-- [WireInterface_2.0.0-tsp.191030.1420+yang.6](./WireInterface_2.0.0-tsp.191030.1420+yang.6.zip)
-  (!!!Experimental file for analyzing the core-model-name issue!!!)
-- [WireInterface_2.0.0-tsp.191030.1420+yang.7](./WireInterface_2.0.0-tsp.191030.1420+yang.7.zip)
-  (!!!Experimental file for analyzing the core-model-name issue!!!)
-- WireInterface_2.0.0-tsp.191114.1510+yang.1
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
+- [WireInterface_2.0.0-tsp.191114.1510+yang.1](./WireInterface_2.0.0-tsp.191114.1510+yang.1.zip)
 
 ### Interface Simulator
 - to be provided
