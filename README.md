@@ -21,13 +21,13 @@
 - [WireInterface_2.0.0-tsp.191122.1925+yang.1](./WireInterface_2.0.0-tsp.191122.1925+yang.1.zip)
 
 ### JSON Schema
-- [WireInterface_2.0.0-tsp.191122.1925+configuration.1.schema.json](./WireInterface_2.0.0-tsp.191122.1925+configuration.1.schema.json)
+- to be provided
 
 ### Interface Simulator
 - to be provided
 
 ### Interface Validator
-- to be provided
+- [WireInterface_2.0.0-tsp.191122.1925+validator.1](./WireInterface_2.0.0-tsp.191122.1925+validator.1.zip)
 
 ### Publication
 - not provided
