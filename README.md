@@ -30,7 +30,7 @@
 - [WireInterface_2.0.0-tsp.191122.1925+validator.1](./WireInterface_2.0.0-tsp.191122.1925+validator.1.zip)
 
 ### Publication
-- not provided
+- Candidate for ONF TR-532 v2.0 
 
 ### Model Classification
 - Live Network
