@@ -27,7 +27,7 @@
 - to be provided
 
 ### Interface Validator
-- [WireInterface_2.0.0-tsp.191122.1925+validator.1](./WireInterface_2.0.0-tsp.191122.1925+validator.1.zip)
+- [WireInterface_2.0.0-tsp.191122.1925+validator.2](./WireInterface_2.0.0-tsp.191122.1925+validator.2.zip)
 
 ### Publication
 - Candidate for ONF TR-532 v2.0 
