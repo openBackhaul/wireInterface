@@ -22,7 +22,7 @@
 
 ### YANG File
 - [WireInterface_2.0.0-tsp.191122.1925+yang.1](./WireInterface_2.0.0-tsp.191122.1925+yang.1.zip)
-- Intermediate Update: [WireInterface_2.0.0-tsp.200123.1000+yang.1](./WireInterface_2.0.0-tsp.200123.1000+yang.1.zip)
+- Intermediate Update: [WireInterface_2.0.0-tsp.200123.1000+yang.2](./WireInterface_2.0.0-tsp.200123.1000+yang.2.zip)
 
 ### JSON Schema
 - to be provided
