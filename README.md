@@ -30,7 +30,7 @@
 - [WireInterface_2.0.0-tsp.191122.1925+yang.1](./WireInterface_2.0.0-tsp.191122.1925+yang.1.zip) (deprecated)
 - [WireInterface_2.0.0-tsp.200123.1000+yang.3](./WireInterface_2.0.0-tsp.200123.1000+yang.3.zip) (deprecated)
 - [WireInterface_2.0.0-tsp.220314.1810+yang.1](./WireInterface_2.0.0-tsp.220314.1810+yang.1.zip) (deprecated)
-
+- [WireInterface_2.0.0-tsp.220324.1100+yang.1](./WireInterface_2.0.0-tsp.220324.1100+yang.1.zip)
 
 ### JSON Schema
 - to be provided
