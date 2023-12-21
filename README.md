@@ -9,8 +9,8 @@ Technology specific amendment to the LayerProtocol class for the physical layer 
 - Consolidates the findings made during PoC5 
 - under review on OTCC level
 
-### [2.0.0-tsp.d.t](../../tree/tsp)
-- Component of TR-541 that has been updated by Deutsche Telekom, Ericsson, Ceragon, Nokia, SIAE and Telefonica
+### [2.0.0-tsi.d.t](../../tree/tsi)
+- Component of TR-532 that has been updated by Deutsche Telekom, Ericsson, Ceragon, Nokia, SIAE and Telefonica
 - under definition
 
 ### Comments
