@@ -17,7 +17,7 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER
 
 ### YANG File
-- [WireInterface_2.0.0-tsi.240104.1045+yang.1](./WireInterface_2.0.0-tsi.240104.1045+yang/air-interface-2-0.yang)
+- [WireInterface_2.0.0-tsi.240104.1045+yang.1](./WireInterface_2.0.0-tsi.240104.1045+yang/wire-interface-2-0.yang)
 
 ### Schema
 - [WireInterface_2.0.0-tsi.240104.1045+schema](./WireInterface_2.0.0-tsi.240104.1045+schema/)
