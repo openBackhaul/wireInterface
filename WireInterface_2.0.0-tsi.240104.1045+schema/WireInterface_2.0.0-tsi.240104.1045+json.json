@@ -1,0 +1,716 @@
+{
+    "/wire-interface-2-0:wire-interface-capability": {
+        "type": "object",
+        "required": [
+            "wire-interface-2-0:wire-interface-capability"
+        ],
+        "properties": {
+            "wire-interface-2-0:wire-interface-capability": {
+                "type": "object",
+                "required": [
+                    "supported-pmd-kind-list",
+                    "auto-pmd-negotiation-is-avail",
+                    "auto-negotiation-pmd-selection-is-avail",
+                    "supported-signal-ordering-kind-list",
+                    "auto-signal-ordering-is-avail",
+                    "configuration-of-rx-sync-preference-is-avail",
+                    "mii-kind",
+                    "mdi-kind",
+                    "required-medium-kind",
+                    "wavelength-grid-min",
+                    "short-reach-mode-is-avail",
+                    "eee-is-avail",
+                    "unidirectional-operation-is-avail",
+                    "rxlevel-low-threshold",
+                    "rxlevel-high-threshold",
+                    "temperature-low-threshold",
+                    "temperature-high-threshold",
+                    "configuration-of-number-of-bip-errors-per-ses-is-avail",
+                    "admin-shut-down-is-avail",
+                    "isolation-is-avail",
+                    "supported-loop-back-kind-list",
+                    "maintenance-timer-range",
+                    "performance-monitoring-is-avail"
+                ],
+                "properties": {
+                    "supported-pmd-kind-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "x-key": "pmd-name",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "pmd-name",
+                                "speed",
+                                "duplex"
+                            ],
+                            "properties": {
+                                "pmd-name": {
+                                    "type": "string"
+                                },
+                                "speed": {
+                                    "type": "string"
+                                },
+                                "duplex": {
+                                    "type": "string",
+                                    "enum": [
+                                        "wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX",
+                                        "wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX",
+                                        "wire-interface-2-0:DUPLEX_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "auto-pmd-negotiation-is-avail": {
+                        "type": "boolean"
+                    },
+                    "auto-negotiation-pmd-selection-is-avail": {
+                        "type": "boolean"
+                    },
+                    "supported-signal-ordering-kind-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI",
+                                "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X",
+                                "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED"
+                            ]
+                        }
+                    },
+                    "auto-signal-ordering-is-avail": {
+                        "type": "boolean"
+                    },
+                    "configuration-of-rx-sync-preference-is-avail": {
+                        "type": "boolean"
+                    },
+                    "mii-kind": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:MII_KIND_TYPE_GBIC",
+                            "wire-interface-2-0:MII_KIND_TYPE_SOLDERED_CONNECTOR",
+                            "wire-interface-2-0:MII_KIND_TYPE_SFP_SFP_PLUS_SFP28",
+                            "wire-interface-2-0:MII_KIND_TYPE_XBI_300_PIN",
+                            "wire-interface-2-0:MII_KIND_TYPE_XENPAK",
+                            "wire-interface-2-0:MII_KIND_TYPE_XFP",
+                            "wire-interface-2-0:MII_KIND_TYPE_XFP_E",
+                            "wire-interface-2-0:MII_KIND_TYPE_XPAK",
+                            "wire-interface-2-0:MII_KIND_TYPE_X2",
+                            "wire-interface-2-0:MII_KIND_TYPE_DWDM_SFP_SFP_PLUS",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS",
+                            "wire-interface-2-0:MII_KIND_TYPE_CXP",
+                            "wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_4X",
+                            "wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD__X",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP28",
+                            "wire-interface-2-0:MII_KIND_TYPE_CXP2",
+                            "wire-interface-2-0:MII_KIND_TYPE_CDFP_STYLE1_STYLE2",
+                            "wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_4X_FAN_OUT",
+                            "wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_8X_FAN_OUT",
+                            "wire-interface-2-0:MII_KIND_TYPE_CDFP_STYLE3",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP_MICRO",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP_DD",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS_RATE_SELECT_V1",
+                            "wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS_RATE_SELECT_V2",
+                            "wire-interface-2-0:MII_KIND_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "mdi-kind": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:MDI_KIND_TYPE_SC",
+                            "wire-interface-2-0:MDI_KIND_TYPE_FIBRE_CHANNEL_STYLE_1",
+                            "wire-interface-2-0:MDI_KIND_TYPE_FIBRE_CHANNEL_STYLE_2",
+                            "wire-interface-2-0:MDI_KIND_TYPE_BNC_TNC",
+                            "wire-interface-2-0:MDI_KIND_TYPE_FC",
+                            "wire-interface-2-0:MDI_KIND_TYPE_FIBER_JACK",
+                            "wire-interface-2-0:MDI_KIND_TYPE_LC",
+                            "wire-interface-2-0:MDI_KIND_TYPE_MT_RJ",
+                            "wire-interface-2-0:MDI_KIND_TYPE_MU",
+                            "wire-interface-2-0:MDI_KIND_TYPE_SG",
+                            "wire-interface-2-0:MDI_KIND_TYPE_OPTICAL_PIGTAIL",
+                            "wire-interface-2-0:MDI_KIND_TYPE_MPO1x12",
+                            "wire-interface-2-0:MDI_KIND_TYPE_MPO2x16",
+                            "wire-interface-2-0:MDI_KIND_TYPE_HSSDC_II",
+                            "wire-interface-2-0:MDI_KIND_TYPE_COPPER_PIGTAIL",
+                            "wire-interface-2-0:MDI_KIND_TYPE_RJ45",
+                            "wire-interface-2-0:MDI_KIND_TYPE_NO_SEPERABLE_CONNECTOR",
+                            "wire-interface-2-0:MDI_KIND_TYPE_MXC2x16",
+                            "wire-interface-2-0:MDI_KIND_TYPE_ST",
+                            "wire-interface-2-0:MDI_KIND_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "required-medium-kind": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT3",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT5",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT6",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT8",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_SINGLE_MODE",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_MULTI_MODE",
+                            "wire-interface-2-0:MEDIUM_KIND_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "wavelength-min-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 3,
+                        "items": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "wavelength-max-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 3,
+                        "items": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "wavelength-grid-min": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "short-reach-mode-is-avail": {
+                        "type": "boolean"
+                    },
+                    "eee-is-avail": {
+                        "type": "boolean"
+                    },
+                    "unidirectional-operation-is-avail": {
+                        "type": "boolean"
+                    },
+                    "rxlevel-low-threshold": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "rxlevel-high-threshold": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "temperature-low-threshold": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "temperature-high-threshold": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "configuration-of-number-of-bip-errors-per-ses-is-avail": {
+                        "type": "boolean"
+                    },
+                    "admin-shut-down-is-avail": {
+                        "type": "boolean"
+                    },
+                    "isolation-is-avail": {
+                        "type": "boolean"
+                    },
+                    "supported-loop-back-kind-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 5,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "wire-interface-2-0:LOOP_BACK_TYPE_NONE",
+                                "wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL",
+                                "wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL",
+                                "wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                            ]
+                        }
+                    },
+                    "maintenance-timer-range": {
+                        "type": "string"
+                    },
+                    "performance-monitoring-is-avail": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "/wire-interface-2-0:wire-interface-configuration": {
+        "type": "object",
+        "required": [
+            "wire-interface-2-0:wire-interface-configuration"
+        ],
+        "properties": {
+            "wire-interface-2-0:wire-interface-configuration": {
+                "type": "object",
+                "required": [
+                    "interface-name",
+                    "interface-is-on",
+                    "remote-wire-interface-name",
+                    "transceiver-configuration-list",
+                    "auto-pmd-negotiation-is-on",
+                    "auto-signal-ordering-is-on",
+                    "fixed-signal-ordering-kind",
+                    "rx-sync-preference",
+                    "short-reach-mode-is-on",
+                    "eee-is-on",
+                    "unidirectional-operation-is-on",
+                    "number-of-bip-errors-per-ses",
+                    "isolation-is-on",
+                    "loop-back-kind-on",
+                    "maintenance-timer",
+                    "performance-monitoring-is-on"
+                ],
+                "properties": {
+                    "interface-name": {
+                        "type": "string"
+                    },
+                    "interface-is-on": {
+                        "type": "boolean"
+                    },
+                    "remote-wire-interface-name": {
+                        "type": "string"
+                    },
+                    "transceiver-configuration-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 10,
+                        "x-key": "transceiver-index",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "transceiver-index",
+                                "transceiver-is-on",
+                                "wavelength"
+                            ],
+                            "properties": {
+                                "transceiver-index": {
+                                    "type": "integer",
+                                    "format": "int8"
+                                },
+                                "transceiver-is-on": {
+                                    "type": "boolean"
+                                },
+                                "wavelength": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            }
+                        }
+                    },
+                    "auto-pmd-negotiation-is-on": {
+                        "type": "boolean"
+                    },
+                    "fixed-pmd-kind": {
+                        "type": "string"
+                    },
+                    "auto-negotiation-pmd-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "auto-signal-ordering-is-on": {
+                        "type": "boolean"
+                    },
+                    "fixed-signal-ordering-kind": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI",
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X",
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "rx-sync-preference": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_MULTIPORT_DEVICE",
+                            "wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_SINGLE_PORT_DEVICE",
+                            "wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_MANUAL_MASTER",
+                            "wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_MANUAL_SLAVE",
+                            "wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "short-reach-mode-is-on": {
+                        "type": "boolean"
+                    },
+                    "eee-is-on": {
+                        "type": "boolean"
+                    },
+                    "unidirectional-operation-is-on": {
+                        "type": "boolean"
+                    },
+                    "number-of-bip-errors-per-ses": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "isolation-is-on": {
+                        "type": "boolean"
+                    },
+                    "loop-back-kind-on": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:LOOP_BACK_TYPE_NONE",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "maintenance-timer": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "performance-monitoring-is-on": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "/wire-interface-2-0:wire-interface-status": {
+        "type": "object",
+        "required": [
+            "wire-interface-2-0:wire-interface-status"
+        ],
+        "properties": {
+            "wire-interface-2-0:wire-interface-status": {
+                "type": "object",
+                "required": [
+                    "interface-status",
+                    "receiver-status-list",
+                    "pmd-negotiation-state",
+                    "pmd-is-up",
+                    "signal-ordering-kind-cur",
+                    "rx-sync-role",
+                    "eee-is-up",
+                    "link-is-up",
+                    "link-is-idle",
+                    "loop-back-kind-up",
+                    "tx-level-cur",
+                    "rx-collisions",
+                    "performance-monitoring-is-up"
+                ],
+                "properties": {
+                    "interface-status": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_UP",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_DOWN",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_TESTING",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_UNKNOWN",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_DORMANT",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_NOT_PRESENT",
+                            "wire-interface-2-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "receiver-status-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 10,
+                        "x-key": "receiver-index",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "receiver-index",
+                                "receive-signal-is-detected",
+                                "rx-level-cur"
+                            ],
+                            "properties": {
+                                "receiver-index": {
+                                    "type": "integer",
+                                    "format": "int8"
+                                },
+                                "receive-signal-is-detected": {
+                                    "type": "boolean"
+                                },
+                                "rx-level-cur": {
+                                    "type": "integer",
+                                    "format": "int8"
+                                }
+                            }
+                        }
+                    },
+                    "pmd-negotiation-state": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_NONE",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_DISABLED",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_ENABLED",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_IN_PROGRESS",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_COMPLETE",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_FAILED",
+                            "wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "pmd-is-up": {
+                        "type": "boolean"
+                    },
+                    "pmd-kind-cur": {
+                        "type": "string"
+                    },
+                    "signal-ordering-kind-cur": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI",
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X",
+                            "wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "rx-sync-role": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:RX_SYNC_ROLE_TYPE_MASTER",
+                            "wire-interface-2-0:RX_SYNC_ROLE_TYPE_SLAVE",
+                            "wire-interface-2-0:RX_SYNC_ROLE_TYPE_FAULT",
+                            "wire-interface-2-0:RX_SYNC_ROLE_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "eee-is-up": {
+                        "type": "boolean"
+                    },
+                    "link-is-up": {
+                        "type": "boolean"
+                    },
+                    "link-is-idle": {
+                        "type": "boolean"
+                    },
+                    "loop-back-kind-up": {
+                        "type": "string",
+                        "enum": [
+                            "wire-interface-2-0:LOOP_BACK_TYPE_NONE",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL",
+                            "wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "tx-level-cur": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "rx-collisions": {
+                        "type": "string"
+                    },
+                    "performance-monitoring-is-up": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "/wire-interface-2-0:wire-interface-current-performance": {
+        "type": "object",
+        "required": [
+            "wire-interface-2-0:wire-interface-current-performance"
+        ],
+        "properties": {
+            "wire-interface-2-0:wire-interface-current-performance": {
+                "type": "object",
+                "required": [
+                    "number-of-current-performance-sets",
+                    "current-performance-data-list"
+                ],
+                "properties": {
+                    "number-of-current-performance-sets": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "current-performance-data-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 2,
+                        "x-key": "granularity-period",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "timestamp",
+                                "suspect-interval-flag",
+                                "elapsed-time",
+                                "scanner-id",
+                                "granularity-period",
+                                "performance-data"
+                            ],
+                            "properties": {
+                                "timestamp": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                                },
+                                "suspect-interval-flag": {
+                                    "type": "boolean"
+                                },
+                                "elapsed-time": {
+                                    "type": "string"
+                                },
+                                "scanner-id": {
+                                    "type": "string"
+                                },
+                                "granularity-period": {
+                                    "type": "string",
+                                    "enum": [
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                },
+                                "performance-data": {
+                                    "type": "object",
+                                    "required": [
+                                        "es",
+                                        "ses",
+                                        "symbol-error-during-carrier",
+                                        "low-power-idle-transmitter-ms",
+                                        "low-power-idle-receiver-ms",
+                                        "rx-collisions"
+                                    ],
+                                    "properties": {
+                                        "es": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "ses": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "symbol-error-during-carrier": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "low-power-idle-transmitter-ms": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "low-power-idle-receiver-ms": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "rx-collisions": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/wire-interface-2-0:wire-interface-historical-performances": {
+        "type": "object",
+        "required": [
+            "wire-interface-2-0:wire-interface-historical-performances"
+        ],
+        "properties": {
+            "wire-interface-2-0:wire-interface-historical-performances": {
+                "type": "object",
+                "required": [
+                    "number-of-historical-performance-sets",
+                    "time-of-latest-change"
+                ],
+                "properties": {
+                    "number-of-historical-performance-sets": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "time-of-latest-change": {
+                        "type": "string",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                    },
+                    "historical-performance-data-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "granularity-period period-end-time",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "suspect-interval-flag",
+                                "history-data-id",
+                                "granularity-period",
+                                "period-end-time",
+                                "performance-data"
+                            ],
+                            "properties": {
+                                "suspect-interval-flag": {
+                                    "type": "boolean"
+                                },
+                                "history-data-id": {
+                                    "type": "string"
+                                },
+                                "granularity-period": {
+                                    "type": "string",
+                                    "enum": [
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS",
+                                        "wire-interface-2-0:GRANULARITY_PERIOD_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                },
+                                "period-end-time": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                                },
+                                "performance-data": {
+                                    "type": "object",
+                                    "required": [
+                                        "es",
+                                        "ses",
+                                        "symbol-error-during-carrier",
+                                        "low-power-idle-transmitter-ms",
+                                        "low-power-idle-receiver-ms",
+                                        "rx-collisions"
+                                    ],
+                                    "properties": {
+                                        "es": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "ses": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "symbol-error-during-carrier": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "low-power-idle-transmitter-ms": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "low-power-idle-receiver-ms": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        },
+                                        "rx-collisions": {
+                                            "type": "integer",
+                                            "format": "int32"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/wire-interface-2-0:restart-pmd-negotiation": {
+        "type": "object",
+        "required": [
+            "input"
+        ],
+        "properties": {
+            "input": {
+                "type": "object",
+                "required": [
+                    "affected-wire-interface"
+                ],
+                "properties": {
+                    "affected-wire-interface": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1957 @@
+openapi: 3.0.1
+info:
+  title: WireInterface_2.0.0-tsi.240104.1045+simulator
+  version: 2.0.0
+
+paths:
+########################################################################################################################
+#   WireInterface_2.0.0-tsi.240104.1045+validator.completeness in static reference mode
+########################################################################################################################
+#
+# At Application
+# ==============
+#
+# Preparation => MountName=305250001, UUID=wireInt1, LocalID=1
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - logical-termination-point
+                      properties:
+                        logical-termination-point:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - uuid
+                              - layer-protocol
+                            properties:
+                              uuid:
+                                type: string
+                                enum:
+                                  - 'wireInt1'
+                              layer-protocol:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - local-id
+                                    - layer-protocol-name
+                                  properties:
+                                    local-id:
+                                      type: string
+                                      enum:
+                                        - '1'
+                                    layer-protocol-name:
+                                      type: string
+                                      enum:
+                                        - 'wire-interface-2-0:LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    - logical-termination-point:
+                        - uuid: 'wireInt1'
+                          layer-protocol:
+                            - local-id: '1'
+                              layer-protocol-name: 'wire-interface-2-0:LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  
+# Completeness of GET 200
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceCapability
+      summary: 'Provides WireInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-capability
+                properties:
+                  wire-interface-2-0:wire-interface-capability:
+                    $ref: '#/components/schemas/wire-interface-capability'
+                example:
+                  wire-interface-2-0:wire-interface-capability:
+                    supported-pmd-kind-list:
+                      - pmd-name: 10BASE-T_HD
+                        speed: 10Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                      - pmd-name: 10BASE-T_FD
+                        speed: 10Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                      - pmd-name: 100BASE-T_HD
+                        speed: 100Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                      - pmd-name: 100BASE-T_FD
+                        speed: 100Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                      - pmd-name: 1000BASE-T_FD
+                        speed: 1000Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                    auto-pmd-negotiation-is-avail: true
+                    auto-negotiation-pmd-selection-is-avail: true
+                    supported-signal-ordering-kind-list:
+                      - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                      - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X'
+                    auto-signal-ordering-is-avail: true
+                    configuration-of-rx-sync-preference-is-avail: true
+                    mii-kind: 'wire-interface-2-0:MII_KIND_TYPE_SOLDERED_CONNECTOR'
+                    mdi-kind: 'wire-interface-2-0:MDI_KIND_TYPE_RJ45'
+                    required-medium-kind: 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT6'
+                    wavelength-min-list:
+                      - -1
+                    wavelength-max-list:
+                      - -1
+                    wavelength-grid-min: -1
+                    short-reach-mode-is-avail: false
+                    eee-is-avail: true
+                    unidirectional-operation-is-avail: false
+                    rxlevel-low-threshold: 99
+                    rxlevel-high-threshold: 99
+                    temperature-low-threshold: -40
+                    temperature-high-threshold: 90
+                    configuration-of-number-of-bip-errors-per-ses-is-avail: true
+                    admin-shut-down-is-avail: true
+                    isolation-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL'
+                      - 'wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL'
+                    maintenance-timer-range: '0-600'
+                    performance-monitoring-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceConfiguration
+      summary: 'Provides WireInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-configuration
+                properties:
+                  wire-interface-2-0:wire-interface-configuration:
+                    $ref: '#/components/schemas/wire-interface-configuration'
+                example:
+                  wire-interface-2-0:wire-interface-configuration:
+                    interface-name: '305230001'
+                    interface-is-on: true
+                    remote-wire-interface-name: '305250001'
+                    transceiver-configuration-list:
+                      - transceiver-index: 0
+                        transceiver-is-on: true
+                        wavelength: -1
+                    auto-pmd-negotiation-is-on: true
+                    fixed-pmd-kind: 'NOT_YET_DEFINED'
+                    auto-negotiation-pmd-list:
+                      - '10BASE-T_HD'
+                      - '10BASE-T_FD'
+                      - '100BASE-T_HD'
+                      - '100BASE-T_FD'
+                      - '1000BASE-T_FD'
+                    auto-signal-ordering-is-on: false
+                    fixed-signal-ordering-kind: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-preference: 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_SINGLE_PORT_DEVICE'
+                    short-reach-mode-is-on: true
+                    eee-is-on: true
+                    unidirectional-operation-is-on: false
+                    number-of-bip-errors-per-ses: -1
+                    isolation-is-on: false
+                    loop-back-kind-on: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 600
+                    performance-monitoring-is-on: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceStatus
+      summary: 'Provides WireInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-status
+                properties:
+                  wire-interface-2-0:wire-interface-status:
+                    $ref: '#/components/schemas/wire-interface-status'
+                example:
+                  wire-interface-2-0:wire-interface-status:
+                    interface-status: 'wire-interface-2-0:INTERFACE_STATUS_TYPE_UP'
+                    receiver-status-list:
+                      - receiver-index: 0
+                        receive-signal-is-detected: true
+                        rx-level-cur: -99
+                    pmd-negotiation-state: 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_COMPLETE'
+                    pmd-is-up: true
+                    pmd-kind-cur: '1000BASE-T_FD'
+                    signal-ordering-kind-cur: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-role: 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_MASTER'
+                    eee-is-up: true
+                    link-is-up: true
+                    link-is-idle: false
+                    loop-back-kind-up: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    tx-level-cur: 99
+                    rx-collisions: '1223'
+                    performance-monitoring-is-up: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-current-performance:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCacheWireInterfaceCurrentPerformance
+      summary: 'Provides WireInterfaceCurrentPerformance from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCurrentPerformance provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-current-performance
+                properties:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    $ref: '#/components/schemas/wire-interface-current-performance'
+                example:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    number-of-current-performance-sets: 2
+                    current-performance-data-list:
+                      - timestamp: '2010-11-20T14:00:00+01:00'
+                        suspect-interval-flag: false
+                        elapsed-time: '22654'
+                        scanner-id: 'Scanner ID not defined.'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS'
+                        performance-data:
+                          es: 35
+                          ses: 7
+                          symbol-error-during-carrier: 23
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 323
+                      - timestamp: '2010-11-20T14:00:00+01:00'
+                        suspect-interval-flag: false
+                        elapsed-time: '224'
+                        scanner-id: 'Scanner ID not defined.'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        performance-data:
+                          es: 5
+                          ses: 0
+                          symbol-error-during-carrier: 0
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 3
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-historical-performances:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceHistoricalPerformances
+      summary: 'Provides WireInterfaceHistoricalPerformances from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceHistoricalPerformances provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-historical-performances
+                properties:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    $ref: '#/components/schemas/wire-interface-historical-performances'
+                example:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    number-of-historical-performance-sets: 2
+                    time-of-latest-change: '2010-11-20T14:00:00+01:00'
+                    historical-performance-data-list:
+                      - suspect-interval-flag: false
+                        history-data-id: '0'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        period-end-time: '2010-11-20T14:00:00+01:00'
+                        performance-data:
+                          es: 17
+                          ses: 1
+                          symbol-error-during-carrier: 2
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 4
+                      - suspect-interval-flag: false
+                        history-data-id: '0'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        period-end-time: '2010-11-20T13:45:00+01:00'
+                        performance-data:
+                          es: 543
+                          ses: 53
+                          symbol-error-during-carrier: 433
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 45
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+
+# Completeness of RPC
+  # /core-model-1-4:network-control-domain=live/control-construct=305250001/wire-interface-2-0:restart-pmd-negotiation:
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/wire-interface-2-0:restart-pmd-negotiation:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+    post:
+      operationId: postRestartPmdNegotiation
+      summary: 'Restarts negotiation of the PMD'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - input
+              properties:
+                input:
+                  type: object
+                  required:
+                    - affected-wire-interface
+                  properties:
+                    affected-wire-interface:
+                      type: string
+      responses:
+        '204':
+          description: 'PMD negotiation restarted'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+
+
+#
+# At Controller (copy from above, different paths, less parameters, basicAuth, no headers)
+# =============
+#
+# Preparation => MountName=305250001, UUID=wireInt1, LocalID=1
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: object
+                    required:
+                      - logical-termination-point
+                    properties:
+                      logical-termination-point:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - uuid
+                            - layer-protocol
+                          properties:
+                            uuid:
+                              type: string
+                              enum:
+                                - 'wireInt1'
+                            layer-protocol:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - local-id
+                                  - layer-protocol-name
+                                properties:
+                                  local-id:
+                                    type: string
+                                    enum:
+                                      - '1'
+                                  layer-protocol-name:
+                                    type: string
+                                    enum:
+                                      - 'wire-interface-2-0:LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    logical-termination-point:
+                      - uuid: 'wireInt1'
+                        layer-protocol:
+                          - local-id: '1'
+                            layer-protocol-name: 'wire-interface-2-0:LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+
+# Completeness of GET 200
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceCapability
+      summary: 'Provides WireInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-capability
+                properties:
+                  wire-interface-2-0:wire-interface-capability:
+                    $ref: '#/components/schemas/wire-interface-capability'
+                example:
+                  wire-interface-2-0:wire-interface-capability:
+                    supported-pmd-kind-list:
+                      - pmd-name: 10BASE-T_HD
+                        speed: 10Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                      - pmd-name: 10BASE-T_FD
+                        speed: 10Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                      - pmd-name: 100BASE-T_HD
+                        speed: 100Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                      - pmd-name: 100BASE-T_FD
+                        speed: 100Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                      - pmd-name: 1000BASE-T_FD
+                        speed: 1000Mbit/s
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                    auto-pmd-negotiation-is-avail: true
+                    auto-negotiation-pmd-selection-is-avail: true
+                    supported-signal-ordering-kind-list:
+                      - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                      - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X'
+                    auto-signal-ordering-is-avail: true
+                    configuration-of-rx-sync-preference-is-avail: true
+                    mii-kind: 'wire-interface-2-0:MII_KIND_TYPE_SOLDERED_CONNECTOR'
+                    mdi-kind: 'wire-interface-2-0:MDI_KIND_TYPE_RJ45'
+                    required-medium-kind: 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT6'
+                    wavelength-min-list:
+                      - -1
+                    wavelength-max-list:
+                      - -1
+                    wavelength-grid-min: -1
+                    short-reach-mode-is-avail: false
+                    eee-is-avail: true
+                    unidirectional-operation-is-avail: false
+                    rxlevel-low-threshold: 99
+                    rxlevel-high-threshold: 99
+                    temperature-low-threshold: -40
+                    temperature-high-threshold: 90
+                    configuration-of-number-of-bip-errors-per-ses-is-avail: true
+                    admin-shut-down-is-avail: true
+                    isolation-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL'
+                      - 'wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL'
+                    maintenance-timer-range: '0-600'
+                    performance-monitoring-is-avail: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceConfiguration
+      summary: 'Provides WireInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-configuration
+                properties:
+                  wire-interface-2-0:wire-interface-configuration:
+                    $ref: '#/components/schemas/wire-interface-configuration'
+                example:
+                  wire-interface-2-0:wire-interface-configuration:
+                    interface-name: '305230001'
+                    interface-is-on: true
+                    remote-wire-interface-name: '305250001'
+                    transceiver-configuration-list:
+                      - transceiver-index: 0
+                        transceiver-is-on: true
+                        wavelength: -1
+                    auto-pmd-negotiation-is-on: true
+                    fixed-pmd-kind: 'NOT_YET_DEFINED'
+                    auto-negotiation-pmd-list:
+                      - '10BASE-T_HD'
+                      - '10BASE-T_FD'
+                      - '100BASE-T_HD'
+                      - '100BASE-T_FD'
+                      - '1000BASE-T_FD'
+                    auto-signal-ordering-is-on: false
+                    fixed-signal-ordering-kind: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-preference: 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_SINGLE_PORT_DEVICE'
+                    short-reach-mode-is-on: true
+                    eee-is-on: true
+                    unidirectional-operation-is-on: false
+                    number-of-bip-errors-per-ses: -1
+                    isolation-is-on: false
+                    loop-back-kind-on: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 600
+                    performance-monitoring-is-on: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceStatus
+      summary: 'Provides WireInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-status
+                properties:
+                  wire-interface-2-0:wire-interface-status:
+                    $ref: '#/components/schemas/wire-interface-status'
+                example:
+                  wire-interface-2-0:wire-interface-status:
+                    interface-status: 'wire-interface-2-0:INTERFACE_STATUS_TYPE_UP'
+                    receiver-status-list:
+                      - receiver-index: 0
+                        receive-signal-is-detected: true
+                        rx-level-cur: -99
+                    pmd-negotiation-state: 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_COMPLETE'
+                    pmd-is-up: true
+                    pmd-kind-cur: '1000BASE-T_FD'
+                    signal-ordering-kind-cur: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-role: 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_MASTER'
+                    eee-is-up: true
+                    link-is-up: true
+                    link-is-idle: false
+                    loop-back-kind-up: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    tx-level-cur: 99
+                    rx-collisions: '1223'
+                    performance-monitoring-is-up: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-current-performance:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCacheWireInterfaceCurrentPerformance
+      summary: 'Provides WireInterfaceCurrentPerformance from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCurrentPerformance provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-current-performance
+                properties:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    $ref: '#/components/schemas/wire-interface-current-performance'
+                example:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    number-of-current-performance-sets: 2
+                    current-performance-data-list:
+                      - timestamp: '2010-11-20T14:00:00+01:00'
+                        suspect-interval-flag: false
+                        elapsed-time: '22654'
+                        scanner-id: 'Scanner ID not defined.'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS'
+                        performance-data:
+                          es: 35
+                          ses: 7
+                          symbol-error-during-carrier: 23
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 323
+                      - timestamp: '2010-11-20T14:00:00+01:00'
+                        suspect-interval-flag: false
+                        elapsed-time: '224'
+                        scanner-id: 'Scanner ID not defined.'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        performance-data:
+                          es: 5
+                          ses: 0
+                          symbol-error-during-carrier: 0
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 3
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-historical-performances:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceHistoricalPerformances
+      summary: 'Provides WireInterfaceHistoricalPerformances from cache'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceHistoricalPerformances provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-historical-performances
+                properties:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    $ref: '#/components/schemas/wire-interface-historical-performances'
+                example:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    number-of-historical-performance-sets: 2
+                    time-of-latest-change: '2010-11-20T14:00:00+01:00'
+                    historical-performance-data-list:
+                      - suspect-interval-flag: false
+                        history-data-id: '0'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        period-end-time: '2010-11-20T14:00:00+01:00'
+                        performance-data:
+                          es: 17
+                          ses: 1
+                          symbol-error-during-carrier: 2
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 4
+                      - suspect-interval-flag: false
+                        history-data-id: '0'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                        period-end-time: '2010-11-20T13:45:00+01:00'
+                        performance-data:
+                          es: 543
+                          ses: 53
+                          symbol-error-during-carrier: 433
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 45
+
+# Completeness of RPC
+  # /rests/operations/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/wire-interface-2-0:restart-pmd-negotiation
+  /rests/operations/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/wire-interface-2-0%3Arestart-pmd-negotiation:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+    post:
+      operationId: postRestartPmdNegotiation
+      summary: 'Restarts negotiation of the PMD'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - input
+              properties:
+                input:
+                  type: object
+                  required:
+                    - affected-wire-interface
+                  properties:
+                    affected-wire-interface:
+                      type: string
+      responses:
+        '204':
+          description: 'PMD negotiation restarted'
+
+
+
+########################################################################################################################
+#   Generic Paths
+########################################################################################################################
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceCapability
+      summary: 'Provides WireInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-capability
+                properties:
+                  wire-interface-2-0:wire-interface-capability:
+                    $ref: '#/components/schemas/wire-interface-capability'
+                example:
+                  wire-interface-2-0:wire-interface-capability:
+                    supported-pmd-kind-list:
+                      - pmd-name: 'string'
+                        speed: 'string'
+                        duplex: 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                    auto-pmd-negotiation-is-avail: true
+                    auto-negotiation-pmd-selection-is-avail: true
+                    supported-signal-ordering-kind-list:
+                      - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    auto-signal-ordering-is-avail: true
+                    configuration-of-rx-sync-preference-is-avail: true
+                    mii-kind: 'wire-interface-2-0:MII_KIND_TYPE_GBIC'
+                    mdi-kind: 'wire-interface-2-0:MDI_KIND_TYPE_SC'
+                    required-medium-kind: 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT3'
+                    wavelength-min-list:
+                      - 0
+                    wavelength-max-list:
+                      - 0
+                    wavelength-grid-min: 0
+                    short-reach-mode-is-avail: true
+                    eee-is-avail: true
+                    unidirectional-operation-is-avail: true
+                    rxlevel-low-threshold: 0
+                    rxlevel-high-threshold: 0
+                    temperature-low-threshold: 0
+                    temperature-high-threshold: 0
+                    configuration-of-number-of-bip-errors-per-ses-is-avail: true
+                    admin-shut-down-is-avail: true
+                    isolation-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: 'string'
+                    performance-monitoring-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceConfiguration
+      summary: 'Provides WireInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-configuration
+                properties:
+                  wire-interface-2-0:wire-interface-configuration:
+                    $ref: '#/components/schemas/wire-interface-configuration'
+                example:
+                  wire-interface-2-0:wire-interface-configuration:
+                    interface-name: 'string'
+                    interface-is-on: true
+                    remote-wire-interface-name: 'string'
+                    transceiver-configuration-list:
+                      - transceiver-index: 0
+                        transceiver-is-on: true
+                        wavelength: 0
+                    auto-pmd-negotiation-is-on: true
+                    fixed-pmd-kind: 'string'
+                    auto-negotiation-pmd-list:
+                      - string
+                    auto-signal-ordering-is-on: true
+                    fixed-signal-ordering-kind: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-preference: 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_MULTIPORT_DEVICE'
+                    short-reach-mode-is-on: true
+                    eee-is-on: true
+                    unidirectional-operation-is-on: true
+                    number-of-bip-errors-per-ses: 0
+                    isolation-is-on: true
+                    loop-back-kind-on: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 0
+                    performance-monitoring-is-on: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceStatus
+      summary: 'Provides WireInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-status
+                properties:
+                  wire-interface-2-0:wire-interface-status:
+                    $ref: '#/components/schemas/wire-interface-status'
+                example:
+                  wire-interface-2-0:wire-interface-status:
+                    interface-status: 'wire-interface-2-0:INTERFACE_STATUS_TYPE_UP'
+                    receiver-status-list:
+                      - receiver-index: 0
+                        receive-signal-is-detected: true
+                        rx-level-cur: 0
+                    pmd-negotiation-state: 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_NONE'
+                    pmd-is-up: true
+                    pmd-kind-cur: 'string'
+                    signal-ordering-kind-cur: 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+                    rx-sync-role: 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_MASTER'
+                    eee-is-up: true
+                    link-is-up: true
+                    link-is-idle: true
+                    loop-back-kind-up: 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+                    tx-level-cur: 0
+                    rx-collisions: 'string'
+                    performance-monitoring-is-up: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-current-performance:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCacheWireInterfaceCurrentPerformance
+      summary: 'Provides WireInterfaceCurrentPerformance from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceCurrentPerformance provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-current-performance
+                properties:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    $ref: '#/components/schemas/wire-interface-current-performance'
+                example:
+                  wire-interface-2-0:wire-interface-current-performance:
+                    number-of-current-performance-sets: 0
+                    current-performance-data-list:
+                      - timestamp: '2010-11-20T14:00:00+01:00'
+                        suspect-interval-flag: true
+                        elapsed-time: 'string'
+                        scanner-id: 'string'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN'
+                        performance-data:
+                          es: 0
+                          ses: 0
+                          symbol-error-during-carrier: 0
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 0
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-historical-performances:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedWireInterfaceHistoricalPerformances
+      summary: 'Provides WireInterfaceHistoricalPerformances from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'WireInterfaceHistoricalPerformances provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - wire-interface-2-0:wire-interface-historical-performances
+                properties:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    $ref: '#/components/schemas/wire-interface-historical-performances'
+                example:
+                  wire-interface-2-0:wire-interface-historical-performances:
+                    number-of-historical-performance-sets: 0
+                    time-of-latest-change: '2010-11-20T14:00:00+01:00'
+                    historical-performance-data-list:
+                      - suspect-interval-flag: true
+                        history-data-id: 'string'
+                        granularity-period: 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN'
+                        period-end-time: '2010-11-20T14:00:00+01:00'
+                        performance-data:
+                          es: 0
+                          ses: 0
+                          symbol-error-during-carrier: 0
+                          low-power-idle-transmitter-ms: 0
+                          low-power-idle-receiver-ms: 0
+                          rx-collisions: 0
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+  /generic/core-model-1-4:network-control-domain=live/control-construct={mountName}/wire-interface-2-0:restart-pmd-negotiation:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+    post:
+      operationId: postRestartPmdNegotiation
+      summary: 'Restarts negotiation of the PMD'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - input
+              properties:
+                input:
+                  type: object
+                  required:
+                    - affected-wire-interface
+                  properties:
+                    affected-wire-interface:
+                      type: string
+      responses:
+        '204':
+          description: 'PMD negotiation restarted'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    wire-interface-capability:
+      type: object
+      required:
+        - supported-pmd-kind-list
+        - auto-pmd-negotiation-is-avail
+        - auto-negotiation-pmd-selection-is-avail
+        - supported-signal-ordering-kind-list
+        - auto-signal-ordering-is-avail
+        - configuration-of-rx-sync-preference-is-avail
+        - mii-kind
+        - mdi-kind
+        - required-medium-kind
+        - wavelength-grid-min
+        - short-reach-mode-is-avail
+        - eee-is-avail
+        - unidirectional-operation-is-avail
+        - rxlevel-low-threshold
+        - rxlevel-high-threshold
+        - temperature-low-threshold
+        - temperature-high-threshold
+        - configuration-of-number-of-bip-errors-per-ses-is-avail
+        - admin-shut-down-is-avail
+        - isolation-is-avail
+        - supported-loop-back-kind-list
+        - maintenance-timer-range
+        - performance-monitoring-is-avail
+      properties:
+        supported-pmd-kind-list:
+          type: array
+          minItems: 1
+          x-key: pmd-name
+          items:
+            type: object
+            required:
+              - pmd-name
+              - speed
+              - duplex
+            properties:
+              pmd-name:
+                type: string
+              speed:
+                type: string
+              duplex:
+                type: string
+                enum:
+                  - 'wire-interface-2-0:DUPLEX_TYPE_HALF_DUPLEX'
+                  - 'wire-interface-2-0:DUPLEX_TYPE_FULL_DUPLEX'
+                  - 'wire-interface-2-0:DUPLEX_TYPE_NOT_YET_DEFINED'
+        auto-pmd-negotiation-is-avail:
+          type: boolean
+        auto-negotiation-pmd-selection-is-avail:
+          type: boolean
+        supported-signal-ordering-kind-list:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            enum:
+              - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+              - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X'
+              - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED'
+        auto-signal-ordering-is-avail:
+          type: boolean
+        configuration-of-rx-sync-preference-is-avail:
+          type: boolean
+        mii-kind:
+          type: string
+          enum:
+            - 'wire-interface-2-0:MII_KIND_TYPE_GBIC'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SOLDERED_CONNECTOR'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SFP_SFP_PLUS_SFP28'
+            - 'wire-interface-2-0:MII_KIND_TYPE_XBI_300_PIN'
+            - 'wire-interface-2-0:MII_KIND_TYPE_XENPAK'
+            - 'wire-interface-2-0:MII_KIND_TYPE_XFP'
+            - 'wire-interface-2-0:MII_KIND_TYPE_XFP_E'
+            - 'wire-interface-2-0:MII_KIND_TYPE_XPAK'
+            - 'wire-interface-2-0:MII_KIND_TYPE_X2'
+            - 'wire-interface-2-0:MII_KIND_TYPE_DWDM_SFP_SFP_PLUS'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS'
+            - 'wire-interface-2-0:MII_KIND_TYPE_CXP'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_4X'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD__X'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP28'
+            - 'wire-interface-2-0:MII_KIND_TYPE_CXP2'
+            - 'wire-interface-2-0:MII_KIND_TYPE_CDFP_STYLE1_STYLE2'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_4X_FAN_OUT'
+            - 'wire-interface-2-0:MII_KIND_TYPE_SHIELDED_MINI_MULTILANE_HD_8X_FAN_OUT'
+            - 'wire-interface-2-0:MII_KIND_TYPE_CDFP_STYLE3'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP_MICRO'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP_DD'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS_RATE_SELECT_V1'
+            - 'wire-interface-2-0:MII_KIND_TYPE_QSFP_PLUS_RATE_SELECT_V2'
+            - 'wire-interface-2-0:MII_KIND_TYPE_NOT_YET_DEFINED'
+        mdi-kind:
+          type: string
+          enum:
+            - 'wire-interface-2-0:MDI_KIND_TYPE_SC'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_FIBRE_CHANNEL_STYLE_1'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_FIBRE_CHANNEL_STYLE_2'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_BNC_TNC'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_FC'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_FIBER_JACK'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_LC'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_MT_RJ'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_MU'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_SG'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_OPTICAL_PIGTAIL'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_MPO1x12'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_MPO2x16'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_HSSDC_II'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_COPPER_PIGTAIL'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_RJ45'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_NO_SEPERABLE_CONNECTOR'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_MXC2x16'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_ST'
+            - 'wire-interface-2-0:MDI_KIND_TYPE_NOT_YET_DEFINED'
+        required-medium-kind:
+          type: string
+          enum:
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT3'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT5'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT6'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_TP_CAT8'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_SINGLE_MODE'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_MULTI_MODE'
+            - 'wire-interface-2-0:MEDIUM_KIND_TYPE_NOT_YET_DEFINED'
+        wavelength-min-list:
+          type: array
+          minItems: 0
+          maxItems: 3
+          items:
+            type: integer
+            format: int32
+        wavelength-max-list:
+          type: array
+          minItems: 0
+          maxItems: 3
+          items:
+            type: integer
+            format: int32
+        wavelength-grid-min:
+          type: integer
+          format: int32
+        short-reach-mode-is-avail:
+          type: boolean
+        eee-is-avail:
+          type: boolean
+        unidirectional-operation-is-avail:
+          type: boolean
+        rxlevel-low-threshold:
+          type: integer
+          format: int8
+        rxlevel-high-threshold:
+          type: integer
+          format: int8
+        temperature-low-threshold:
+          type: integer
+          format: int8
+        temperature-high-threshold:
+          type: integer
+          format: int8
+        configuration-of-number-of-bip-errors-per-ses-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        isolation-is-avail:
+          type: boolean
+        supported-loop-back-kind-list:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: string
+            enum:
+              - 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+              - 'wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL'
+              - 'wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL'
+              - 'wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer-range:
+          type: string
+        performance-monitoring-is-avail:
+          type: boolean
+    wire-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - interface-is-on
+        - remote-wire-interface-name
+        - transceiver-configuration-list
+        - auto-pmd-negotiation-is-on
+        - auto-signal-ordering-is-on
+        - fixed-signal-ordering-kind
+        - rx-sync-preference
+        - short-reach-mode-is-on
+        - eee-is-on
+        - unidirectional-operation-is-on
+        - number-of-bip-errors-per-ses
+        - isolation-is-on
+        - loop-back-kind-on
+        - maintenance-timer
+        - performance-monitoring-is-on
+      properties:
+        interface-name:
+          type: string
+        interface-is-on:
+          type: boolean
+        remote-wire-interface-name:
+          type: string
+        transceiver-configuration-list:
+          type: array
+          minItems: 1
+          maxItems: 10
+          x-key: transceiver-index
+          items:
+            type: object
+            required:
+              - transceiver-index
+              - transceiver-is-on
+              - wavelength
+            properties:
+              transceiver-index:
+                type: integer
+                format: int8
+              transceiver-is-on:
+                type: boolean
+              wavelength:
+                type: integer
+                format: int32
+        auto-pmd-negotiation-is-on:
+          type: boolean
+        fixed-pmd-kind:
+          type: string
+        auto-negotiation-pmd-list:
+          type: array
+          minItems: 0
+          items:
+            type: string
+        auto-signal-ordering-is-on:
+          type: boolean
+        fixed-signal-ordering-kind:
+          type: string
+          enum:
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X'
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED'
+        rx-sync-preference:
+          type: string
+          enum:
+            - 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_MULTIPORT_DEVICE'
+            - 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_AUTO_SINGLE_PORT_DEVICE'
+            - 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_MANUAL_MASTER'
+            - 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_MANUAL_SLAVE'
+            - 'wire-interface-2-0:RX_SYNC_PREFERENCE_TYPE_NOT_YET_DEFINED'
+        short-reach-mode-is-on:
+          type: boolean
+        eee-is-on:
+          type: boolean
+        unidirectional-operation-is-on:
+          type: boolean
+        number-of-bip-errors-per-ses:
+          type: integer
+          format: int16
+        isolation-is-on:
+          type: boolean
+        loop-back-kind-on:
+          type: string
+          enum:
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer:
+          type: integer
+          format: int32
+        performance-monitoring-is-on:
+          type: boolean
+    wire-interface-status:
+      type: object
+      required:
+        - interface-status
+        - receiver-status-list
+        - pmd-negotiation-state
+        - pmd-is-up
+        - signal-ordering-kind-cur
+        - rx-sync-role
+        - eee-is-up
+        - link-is-up
+        - link-is-idle
+        - loop-back-kind-up
+        - tx-level-cur
+        - rx-collisions
+        - performance-monitoring-is-up
+      properties:
+        interface-status:
+          type: string
+          enum:
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_UP'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_DOWN'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_TESTING'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_UNKNOWN'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_DORMANT'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_NOT_PRESENT'
+            - 'wire-interface-2-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED'
+        receiver-status-list:
+          type: array
+          minItems: 1
+          maxItems: 10
+          x-key: receiver-index
+          items:
+            type: object
+            required:
+              - receiver-index
+              - receive-signal-is-detected
+              - rx-level-cur
+            properties:
+              receiver-index:
+                type: integer
+                format: int8
+              receive-signal-is-detected:
+                type: boolean
+              rx-level-cur:
+                type: integer
+                format: int8
+        pmd-negotiation-state:
+          type: string
+          enum:
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_NONE'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_DISABLED'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_ENABLED'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_IN_PROGRESS'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_COMPLETE'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_FAILED'
+            - 'wire-interface-2-0:PMD_NEGOTIATION_STATE_TYPE_NOT_YET_DEFINED'
+        pmd-is-up:
+          type: boolean
+        pmd-kind-cur:
+          type: string
+        signal-ordering-kind-cur:
+          type: string
+          enum:
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI'
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_MDI_X'
+            - 'wire-interface-2-0:SIGNAL_ORDERING_KIND_TYPE_NOT_YET_DEFINED'
+        rx-sync-role:
+          type: string
+          enum:
+            - 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_MASTER'
+            - 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_SLAVE'
+            - 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_FAULT'
+            - 'wire-interface-2-0:RX_SYNC_ROLE_TYPE_NOT_YET_DEFINED'
+        eee-is-up:
+          type: boolean
+        link-is-up:
+          type: boolean
+        link-is-idle:
+          type: boolean
+        loop-back-kind-up:
+          type: string
+          enum:
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_NONE'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_EXTERNAL'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_INTERNAL'
+            - 'wire-interface-2-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        tx-level-cur:
+          type: integer
+          format: int8
+        rx-collisions:
+          type: string
+        performance-monitoring-is-up:
+          type: boolean
+    wire-interface-current-performance:
+      type: object
+      required:
+        - number-of-current-performance-sets
+        - current-performance-data-list
+      properties:
+        number-of-current-performance-sets:
+          type: integer
+          format: int8
+        current-performance-data-list:
+          type: array
+          minItems: 1
+          maxItems: 2
+          x-key: granularity-period
+          items:
+            type: object
+            required:
+              - timestamp
+              - suspect-interval-flag
+              - elapsed-time
+              - scanner-id
+              - granularity-period
+              - performance-data
+            properties:
+              timestamp:
+                type: string
+                pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+              suspect-interval-flag:
+                type: boolean
+              elapsed-time:
+                type: string
+              scanner-id:
+                type: string
+              granularity-period:
+                type: string
+                enum:
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_NOT_YET_DEFINED'
+              performance-data:
+                type: object
+                required:
+                  - es
+                  - ses
+                  - symbol-error-during-carrier
+                  - low-power-idle-transmitter-ms
+                  - low-power-idle-receiver-ms
+                  - rx-collisions
+                properties:
+                  es:
+                    type: integer
+                    format: int32
+                  ses:
+                    type: integer
+                    format: int32
+                  symbol-error-during-carrier:
+                    type: integer
+                    format: int32
+                  low-power-idle-transmitter-ms:
+                    type: integer
+                    format: int32
+                  low-power-idle-receiver-ms:
+                    type: integer
+                    format: int32
+                  rx-collisions:
+                    type: integer
+                    format: int32
+    wire-interface-historical-performances:
+      type: object
+      required:
+        - number-of-historical-performance-sets
+        - time-of-latest-change
+      properties:
+        number-of-historical-performance-sets:
+          type: integer
+          format: int16
+        time-of-latest-change:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        historical-performance-data-list:
+          type: array
+          minItems: 0
+          x-key: granularity-period period-end-time
+          items:
+            type: object
+            required:
+              - suspect-interval-flag
+              - history-data-id
+              - granularity-period
+              - period-end-time
+              - performance-data
+            properties:
+              suspect-interval-flag:
+                type: boolean
+              history-data-id:
+                type: string
+              granularity-period:
+                type: string
+                enum:
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_UNKNOWN'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-15-MIN'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_PERIOD-24-HOURS'
+                - 'wire-interface-2-0:GRANULARITY_PERIOD_TYPE_NOT_YET_DEFINED'
+              period-end-time:
+                type: string
+                pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+              performance-data:
+                type: object
+                required:
+                  - es
+                  - ses
+                  - symbol-error-during-carrier
+                  - low-power-idle-transmitter-ms
+                  - low-power-idle-receiver-ms
+                  - rx-collisions
+                properties:
+                  es:
+                    type: integer
+                    format: int32
+                  ses:
+                    type: integer
+                    format: int32
+                  symbol-error-during-carrier:
+                    type: integer
+                    format: int32
+                  low-power-idle-transmitter-ms:
+                    type: integer
+                    format: int32
+                  low-power-idle-receiver-ms:
+                    type: integer
+                    format: int32
+                  rx-collisions:
+                    type: integer
+                    format: int32
+    wire-interface-2-0:restart-pmd-negotiation:
+
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic
