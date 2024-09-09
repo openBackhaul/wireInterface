@@ -17,22 +17,22 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER
 
 ### YANG File
-- [WireInterface_2.0.0-tsi.240104.1045+yang.1](./WireInterface_2.0.0-tsi.240104.1045+yang.1.zip)
+- [WireInterface_2.0.0-tsi.240104.1045+yang.1](./WireInterface_2.0.0-tsi.240104.1045+yang/air-interface-2-0.yang)
 
-### JSON Schema
-- to be provided
+### Schema
+- [WireInterface_2.0.0-tsi.240104.1045+schema](./WireInterface_2.0.0-tsi.240104.1045+schema/)
 
 ### Interface Simulator
-- to be provided
+- [WireInterface_2.0.0-tsi.240104.1045+simulator](./WireInterface_2.0.0-tsi.240104.1045+simulator/)
 
 ### Interface Validator
-- [WireInterface_2.0.0-tsi.240104.1045+validator.2](./WireInterface_2.0.0-tsi.240104.1045+validator.2.zip)
+- [WireInterface_2.0.0-tsi.240104.1045+validator](./WireInterface_2.0.0-tsi.240104.1045+validator/)
 
 ### Publication
-- Candidate for ONF TR-532 v2.0 
+- Published as a part of ONF TR-532 v2.0  
 
 ### Model Classification
-- Live Network
+- Operational in Live Network
 
 ### Open Issue List
 - [wireInterface/issues](../../issues)
