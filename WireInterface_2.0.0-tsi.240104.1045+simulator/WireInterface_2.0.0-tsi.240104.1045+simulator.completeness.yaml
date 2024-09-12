@@ -1,11 +1,11 @@
 openapi: 3.0.1
 info:
-  title: WireInterface_2.0.0-tsi.240104.1045+simulator
+  title: WireInterface_2.0.0-tsi.240104.1045+simulator.completeness
   version: 2.0.0
 
 paths:
 ########################################################################################################################
-#   WireInterface_2.0.0-tsi.240104.1045+validator.completeness in static reference mode
+#   WireInterface_2.0.0-tsi.240104.1045+simulator.completeness in static reference mode
 ########################################################################################################################
 #
 # At Application
@@ -491,21 +491,17 @@ paths:
 # Preparation => MountName=305250001, UUID=wireInt1, LocalID=1
   /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
     parameters:
-      - $ref: '#/components/parameters/user'
-      - $ref: '#/components/parameters/originator'
-      - $ref: '#/components/parameters/x-correlator'
-      - $ref: '#/components/parameters/trace-indicator'
-      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
     get:
       operationId: getLtpList
-      summary: 'Provides list of LTPs from cache'
+      summary: 'Provides list of LTPs from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'List of LTPs provided from cache'
+          description: 'List of LTPs provided from device'
           content:
             application/json:
               schema:
@@ -553,15 +549,6 @@ paths:
                         layer-protocol:
                           - local-id: '1'
                             layer-protocol-name: 'wire-interface-2-0:LAYER_PROTOCOL_NAME_TYPE_WIRE_LAYER'
-          headers:
-            x-correlator:
-              $ref: '#/components/headers/x-correlator'
-            exec-time:
-              $ref: '#/components/headers/exec-time'
-            backend-time:
-              $ref: '#/components/headers/backend-time'
-            life-cycle-state:
-              $ref: '#/components/headers/life-cycle-state'
 
 # Completeness of GET 200
   /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-capability:
@@ -572,14 +559,14 @@ paths:
       - $ref: '#/components/parameters/fields'
     get:
       operationId: getCachedWireInterfaceCapability
-      summary: 'Provides WireInterfaceCapability from cache'
+      summary: 'Provides WireInterfaceCapability from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'WireInterfaceCapability provided from cache'
+          description: 'WireInterfaceCapability provided from device'
           content:
             application/json:
               schema:
@@ -645,14 +632,14 @@ paths:
       - $ref: '#/components/parameters/fields'
     get:
       operationId: getCachedWireInterfaceConfiguration
-      summary: 'Provides WireInterfaceConfiguration from cache'
+      summary: 'Provides WireInterfaceConfiguration from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'WireInterfaceConfiguration provided from cache'
+          description: 'WireInterfaceConfiguration provided from device'
           content:
             application/json:
               schema:
@@ -698,14 +685,14 @@ paths:
       - $ref: '#/components/parameters/fields'
     get:
       operationId: getCachedWireInterfaceStatus
-      summary: 'Provides WireInterfaceStatus from cache'
+      summary: 'Provides WireInterfaceStatus from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'WireInterfaceStatus provided from cache'
+          description: 'WireInterfaceStatus provided from device'
           content:
             application/json:
               schema:
@@ -742,14 +729,14 @@ paths:
       - $ref: '#/components/parameters/fields'
     get:
       operationId: getCacheWireInterfaceCurrentPerformance
-      summary: 'Provides WireInterfaceCurrentPerformance from cache'
+      summary: 'Provides WireInterfaceCurrentPerformance from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'WireInterfaceCurrentPerformance provided from cache'
+          description: 'WireInterfaceCurrentPerformance provided from device'
           content:
             application/json:
               schema:
@@ -787,36 +774,22 @@ paths:
                           low-power-idle-transmitter-ms: 0
                           low-power-idle-receiver-ms: 0
                           rx-collisions: 3
-          headers:
-            x-correlator:
-              $ref: '#/components/headers/x-correlator'
-            exec-time:
-              $ref: '#/components/headers/exec-time'
-            backend-time:
-              $ref: '#/components/headers/backend-time'
-            life-cycle-state:
-              $ref: '#/components/headers/life-cycle-state'
   /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-historical-performances:
     parameters:
-      - $ref: '#/components/parameters/user'
-      - $ref: '#/components/parameters/originator'
-      - $ref: '#/components/parameters/x-correlator'
-      - $ref: '#/components/parameters/trace-indicator'
-      - $ref: '#/components/parameters/customer-journey'
       - $ref: '#/components/parameters/mountName'
       - $ref: '#/components/parameters/uuid'
       - $ref: '#/components/parameters/localId'
       - $ref: '#/components/parameters/fields'
     get:
       operationId: getCachedWireInterfaceHistoricalPerformances
-      summary: 'Provides WireInterfaceHistoricalPerformances from cache'
+      summary: 'Provides WireInterfaceHistoricalPerformances from device'
       tags:
         - IndividualServices
       security:
         - basicAuth: []
       responses:
         '200':
-          description: 'WireInterfaceHistoricalPerformances provided from cache'
+          description: 'WireInterfaceHistoricalPerformances provided from device'
           content:
             application/json:
               schema:
@@ -885,7 +858,6 @@ paths:
       responses:
         '204':
           description: 'PMD negotiation restarted'
-
 
 
 ########################################################################################################################
