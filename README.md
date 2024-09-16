@@ -23,10 +23,10 @@
 - [WireInterface_2.0.0-tsi.240104.1045+schema](./WireInterface_2.0.0-tsi.240104.1045+schema/)
 
 ### Interface Simulator
-- [WireInterface_2.0.0-tsi.240104.1045+simulator](./WireInterface_2.0.0-tsi.240104.1045+simulator/)
+- [WireInterface_2.0.0-tsi.240104.1045+simulator](./WireInterface_2.0.0-tsi.240104.1045+simu/)
 
 ### Interface Validator
-- [WireInterface_2.0.0-tsi.240104.1045+validator](./WireInterface_2.0.0-tsi.240104.1045+validator/)
+- [WireInterface_2.0.0-tsi.240104.1045+validator](./WireInterface_2.0.0-tsi.240104.1045+vali/)
 
 ### Publication
 - Published as a part of ONF TR-532 v2.0  
