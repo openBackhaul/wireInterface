@@ -492,6 +492,7 @@ paths:
   /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
     parameters:
       - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
     get:
       operationId: getLtpList
       summary: 'Provides list of LTPs from device'
