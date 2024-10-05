@@ -16,6 +16,7 @@ participant "/wire-interface-configuration" as Configuration
 participant "/wire-interface-status" as Status
 participant "/wire-interface-current-performance" as CurrentPerformance
 participant "/wire-interface-historical-performances" as HistoricalPerformances
+participant "/restart-pmd-negotiation" as RestartPmdNegotiation
 
 group Preparation
   Data --\\o Postman : {servers,\n   mountName,\n   kindOfReference,\n   suffixUrlEncodingIsRequired}
@@ -73,6 +74,15 @@ group /wire-interface-historical-performances
   Postman <-- HistoricalPerformances : {HistoricalPerformancesClass}
   note right Postman
     schema validation
+  end note
+end
+
+group /restart-pmd-negotiation
+  Collection --\\o Postman : {mountName, uuid, \n suffixUrlEncodingIsRequired}
+  Postman -> RestartPmdNegotiation : {mountName, uuid}
+  Postman <-- RestartPmdNegotiation : 204
+  note right Postman
+    f(x)==204?
   end note
 end
 
